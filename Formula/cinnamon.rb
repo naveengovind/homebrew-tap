@@ -4,11 +4,12 @@ class Cinnamon < Formula
   desc "Themes and extensions for the Claude desktop app, Spicetify-style"
   homepage "https://github.com/naveengovind/claude-cinnamon"
   url "https://github.com/naveengovind/claude-cinnamon.git",
-      tag:      "v0.1.0",
-      revision: "ec53041b6af08062b9c42c9de2dfdba45a221e77"
+      tag:      "v0.1.2",
+      revision: "9e1b9516fdc2001e0507621ca460e6f86fb9f996"
   head "https://github.com/naveengovind/claude-cinnamon.git", branch: "main"
 
   depends_on :macos
+  depends_on "oven-sh/bun/bun"
 
   def install
     libexec.install Dir["*"]
@@ -21,9 +22,8 @@ class Cinnamon < Formula
       Finish setting up (builds Cinnamon Helper and adds its login item):
         cinnamon install
 
-      Needs Node.js 22+ or Bun (brew install node), the Xcode Command Line Tools
-      (xcode-select --install), and Developer Mode in Claude
-      (Help > Troubleshooting > Enable Developer Mode).
+      Needs the Xcode Command Line Tools (xcode-select --install) and Developer Mode
+      in Claude (Help > Troubleshooting > Enable Developer Mode).
 
       Before `brew uninstall cinnamon`, run: cinnamon uninstall
     EOS
