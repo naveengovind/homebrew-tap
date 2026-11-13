@@ -1,35 +1,42 @@
-# Cinnamon — themes and extensions for the Claude desktop app (macOS).
-# The source repo is private: Homebrew fetches it with git, using your normal GitHub credentials.
+# Cinnamon: themes and extensions for the Claude desktop app (macOS).
+# Made by scripts/formula.ts in naveengovind/claude-cinnamon at each release; change it there.
 class Cinnamon < Formula
   desc "Themes and extensions for the Claude desktop app, Spicetify-style"
   homepage "https://github.com/naveengovind/claude-cinnamon"
-  url "https://github.com/naveengovind/claude-cinnamon.git",
-      tag:      "v0.1.2",
-      revision: "9e1b9516fdc2001e0507621ca460e6f86fb9f996"
-  head "https://github.com/naveengovind/claude-cinnamon.git", branch: "main"
+  version "0.2.1"
 
-  depends_on :macos
-  depends_on "oven-sh/bun/bun"
+  on_arm do
+    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.2.1/cinnamon-darwin-arm64.tar.gz"
+    sha256 "7b2c27020fff63103d6ad6d4ef5f95392f39c917197d0c2bdb466828a758c150"
+  end
+  on_intel do
+    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.2.1/cinnamon-darwin-x64.tar.gz"
+    sha256 "6975b4e2250373c5ce90997cced8c02f595ab5a0ad3bca26b439cc2971b49ff1"
+  end
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
+  depends_on macos: :ventura
 
   def install
-    libexec.install Dir["*"]
-    # CINNAMON_ROOT points at the stable opt/ path, so the login item keeps working across upgrades.
-    (bin/"cinnamon").write_env_script libexec/"bin/cinnamon", CINNAMON_ROOT: opt_libexec
+    bin.install "cinnamon"
   end
 
   def caveats
     <<~EOS
-      Finish setting up (builds Cinnamon Helper and adds its login item):
+      Finish setting up (adds the login item that applies Cinnamon each time Claude starts):
         cinnamon install
 
-      Needs the Xcode Command Line Tools (xcode-select --install) and Developer Mode
-      in Claude (Help > Troubleshooting > Enable Developer Mode).
+      Cinnamon needs Developer Mode in Claude: Help > Troubleshooting > Enable Developer Mode.
 
       Before `brew uninstall cinnamon`, run: cinnamon uninstall
     EOS
   end
 
   test do
-    assert_match "usage", shell_output("#{bin}/cinnamon help")
+    assert_equal version.to_s, shell_output("#{bin}/cinnamon --version").strip
   end
 end
