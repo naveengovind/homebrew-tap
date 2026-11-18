@@ -1,15 +1,15 @@
 # Cinnamon: the menu bar app and the cinnamon command, for the Claude desktop app (macOS).
 # Made by scripts/formula.ts in naveengovind/claude-cinnamon at each release; change it there.
 cask "cinnamon" do
-  version "0.4.0"
+  version "0.4.1"
 
   on_arm do
-    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.0/Cinnamon-app-darwin-arm64.zip"
-    sha256 "51e1c2f5bc17155dc9431bc34a3efcd7040fe1007f3456f1d8150c0f5913307d"
+    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.1/Cinnamon-app-darwin-arm64.zip"
+    sha256 "51efd25052496aa3b241fbad559f271d02655eafd2a4a735bbd881e93fac09cf"
   end
   on_intel do
-    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.0/Cinnamon-app-darwin-x64.zip"
-    sha256 "9e34f36ad8ed904529b5d034f9905d0a12f2ed522de3808b38a83fa2f41acb8c"
+    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.1/Cinnamon-app-darwin-x64.zip"
+    sha256 "bfbfb40354ed5d983305e38819ae298e4a19fb75cf958290e9b268a31fbe39cf"
   end
 
   name "Cinnamon"
@@ -21,7 +21,7 @@ cask "cinnamon" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Cinnamon.app"
   binary "#{appdir}/Cinnamon.app/Contents/Resources/cinnamon"
