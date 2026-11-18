@@ -3,15 +3,15 @@
 class Cinnamon < Formula
   desc "Themes and extensions for the Claude desktop app, Spicetify-style"
   homepage "https://github.com/naveengovind/claude-cinnamon"
-  version "0.3.4"
+  version "0.4.0"
 
   on_arm do
-    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.3.4/cinnamon-darwin-arm64.tar.gz"
-    sha256 "c88974762b47552d56669835b496e4bce0947a786fa0bed2d23d50f45e5f9fc0"
+    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.0/cinnamon-darwin-arm64.tar.gz"
+    sha256 "b72e0b0c7639384dabbc13af0ae7e28c4e2b321e1cc92f37b6ed92860d8514fc"
   end
   on_intel do
-    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.3.4/cinnamon-darwin-x64.tar.gz"
-    sha256 "b69d1fe98f21eb54a7b593d5f7f765741b125c320d885595a6b1224f55a17360"
+    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.0/cinnamon-darwin-x64.tar.gz"
+    sha256 "ca7a704a7997cb51ae41165d2668869e7f6a3a0e2a822c6456d284e3ea3309a3"
   end
 
   livecheck do
