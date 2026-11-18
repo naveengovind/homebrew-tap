@@ -14,7 +14,7 @@ cask "cinnamon" do
 
   name "Cinnamon"
   desc "Themes and extensions for the Claude desktop app"
-  homepage "https://naveengovind.github.io/claude-cinnamon/"
+  homepage "https://github.com/naveengovind/claude-cinnamon"
 
   livecheck do
     url :url
