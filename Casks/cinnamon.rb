@@ -1,15 +1,15 @@
 # Cinnamon: the menu bar app and the cinnamon command, for the Claude desktop app (macOS).
 # Made by scripts/formula.ts in naveengovind/claude-cinnamon at each release; change it there.
 cask "cinnamon" do
-  version "0.4.4"
+  version "0.4.5"
 
   on_arm do
-    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.4/Cinnamon-app-darwin-arm64.zip"
-    sha256 "810b2147d182b2207626cb6321ad1242bf5e5f97d1e5395142ed03470fd06d05"
+    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.5/Cinnamon-app-darwin-arm64.zip"
+    sha256 "0288ba8c310601c8d7c4f3bba903d51b76ecfbad93e5e99d66a541c729e74573"
   end
   on_intel do
-    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.4/Cinnamon-app-darwin-x64.zip"
-    sha256 "686833257cbdd6241c73ae7821de6b0937f75f032827974076f4fc547deee7d6"
+    url "https://github.com/naveengovind/claude-cinnamon/releases/download/v0.4.5/Cinnamon-app-darwin-x64.zip"
+    sha256 "416990a3f42807baab3d35fa77ef0b18588f1b4a4cf356a3788394d4537de1a6"
   end
 
   name "Cinnamon"
